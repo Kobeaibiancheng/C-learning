@@ -10,7 +10,7 @@ static int IsFull(char board[ROW][COL], int row, int col)
 	{
 		for (j = 0; j<col; j++)
 		{
-			if (board[i][j] == '\0')
+			if (board[i][j] == ' ')
 				return 0;
 		}
 	}
@@ -20,7 +20,7 @@ static int IsFull(char board[ROW][COL], int row, int col)
 //ÆåÅÌ³õÊ¼»¯
 void InitBoard(char board[ROW][COL], int row, int col)
 {
-	memset(board, ' ', row*col*board[0][0]);
+	memset(board, ' ', row*col*sizeof(board[0][0]));
 }
 
 
@@ -85,7 +85,7 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 	{
 		x = rand()%row;
 		y = rand()%col;
-		if (board[x][y] != '*'&&board[x][y] != '#')
+		if (board[x][y] == ' ')
 		{
 			board[x][y] = '#';
 			break;
@@ -156,7 +156,8 @@ char IsWiner(char board[ROW][COL], int row, int col)
 
 	if (IsFull(board, ROW, COL) == 1)
 		return 'p';
-	
+
+	return 'c';
 
 }
 
