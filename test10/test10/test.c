@@ -77,3 +77,55 @@
 //	return 0;
 //}
 
+//32位两个整型二进制位有多少不同bit
+//int main()
+//{
+//	int a = 1999;
+//	int b = 2299;
+//	//0101 -5
+//	//1011 -11
+//	//0001
+//	int count = 0;
+//	int i = 0;
+//	for (i = 0; i < 32; i++)
+//	{
+//		if ((1 == (a & 1)) && (1 == (b & 1)) || (0 == (a & 1)) && (0 == (b & 1)))
+//			count++;
+//		a >>= 1;
+//		b >>= 1;
+//	}
+//	printf("%d\n", 32 - count);
+//	return 0;
+//}
+
+void print_num(unsigned value)
+{
+   int count = 0;//计算二进制 位数
+   int a[32] = { 0 };
+   int i = 0;
+   while (value) 
+   {      
+	    a[i++] = value % 2;
+	    value /= 2;
+	    count++;
+		
+	}
+	printf("奇数序列\n");
+	for (i = count; i >= 0; i -= 2)
+	{
+		printf("%d ", a[i]);
+	}
+	    printf("\n");
+	    printf("偶数序列\n");
+	for (i = count - 1; i >= 0; i -= 2) 
+	{
+		printf("%d ", a[i]);
+	}
+	    printf("\n");
+}
+int main()
+{
+	int value = 11;// 1011
+	print_num(value);
+	return 0;
+}
