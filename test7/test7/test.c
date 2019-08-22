@@ -98,3 +98,30 @@
 //	printf("%d\n", ret);
 //	return 0;
 //}
+
+int MyStrlen(const char* str)
+{
+	int count = 0;
+	while (*str++)
+	{
+		count++;
+	}
+	return count;
+}
+void ReverseString(char* str)
+{
+	int line = MyStrlen(str);
+	char tmp = *str;
+	*str = *(str + line - 1);
+	*(str + line - 1) = '\0';
+	if (MyStrlen(str + 1) >= 2)
+		ReverseString(str + 1);
+	*(str + line - 1) = tmp;
+}
+int main()
+{
+	char arr[] = "abcedf";
+	ReverseString(arr);
+	printf("%s", arr);
+	return 0;
+}
