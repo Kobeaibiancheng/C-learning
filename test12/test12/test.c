@@ -34,8 +34,8 @@
 //	{
 //		for (j = 0; j < y; j++)
 //		{
-//			//parr指针变量中存放arr[3][5]第一行的地址，parr+i表示第i行的地址
-//			//*(parr+i)访问第i行的内容，(*(parr+i)+j)访问第i行第j列的元素
+//			parr指针变量中存放arr[3][5]第一行的地址，parr+i表示第i行的地址
+//			*(parr+i)访问第i行的内容，(*(parr+i)+j)访问第i行第j列的元素
 //			printf("%d ", *((*parr+i)+j));
 //		}
 //		printf("\n");
