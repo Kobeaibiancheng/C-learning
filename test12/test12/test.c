@@ -16,6 +16,7 @@
 //	int sz = sizeof(arr) / sizeof(arr[0]);
 //	int i = 0;
 //	int k = arr[0];
+//
 //	for (i = 1; i < sz; i++)
 //	{
 //		k ^= arr[i]; //001
@@ -24,7 +25,51 @@
 //	printf("%d\n", k);
 //	return 0;
 //}
+#include<math.h>
+//    将一个书的二进制位左右翻转
+unsigned int reverse_bit(unsigned int a)
+{
+	int i = 0;
+	unsigned int sum = 0;
+	for (i = 0; i < 32; i++)
+	{
+		//sum += ((a >> i)&1)*pow(2, 31 - i);
+		sum += ((a >> i) & 1)*(1 << (31 - i));
+	}
+	return sum;
+}
+int main()
+{
+	int i = 0;
+	unsigned int a = 25;
+	//00000000000000000000000000011001
+	//00000000000000000000000000000001
+	//10011000000000000000000000000000
+	unsigned int ret = reverse_bit(a);
+	printf("%u\n",ret);
+	return 0;
+}
 
+//unsigned reverse_bit(unsigned int num)
+//{
+//	int i = 0;
+//	unsigned int ret = 0;
+//	for (i = 0; i < 32; i++)
+//	{
+//		ret <<= 1;
+//		ret |= ((num >> i)&1);
+//	}
+//	return ret;
+//}
+//
+//int main()
+//{
+//	unsigned int a = 25;
+//	unsigned int ret = reverse_bit(a);
+//	printf("%u\n", ret);
+//	return 0;
+//
+//}
 //指针访问二级数组的元素,形参是 指针数组
 //void Print(int(*parr)[5], int x, int y)
 //{
