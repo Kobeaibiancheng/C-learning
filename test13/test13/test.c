@@ -64,17 +64,9 @@ void Print(int arr[], int sz)
 	}
 }
 
-void Com(int* e1, int* e2,int sz)
+int Com(const void* e1,const void* e2)
 {
-	int i = 0;
-	int j = 0;
-
-		for (i = 0; i<sz; i++)
-		{
-			char tmp = *(e1 + i);
-			*(e1 + i) = *(e2 + i);
-			*(e2 + i) = tmp;
-		}
+	return *(int*)e1 - *(int*)e2;
 
 }
 int main()
@@ -84,4 +76,5 @@ int main()
 	qsort(arr, sz, sizeof(arr[0]), Com);
 	Print(arr, sz);
 	return 0;
+
 }

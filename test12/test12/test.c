@@ -27,28 +27,28 @@
 //}
 #include<math.h>
 //    将一个书的二进制位左右翻转
-unsigned int reverse_bit(unsigned int a)
-{
-	int i = 0;
-	unsigned int sum = 0;
-	for (i = 0; i < 32; i++)
-	{
-		//sum += ((a >> i)&1)*pow(2, 31 - i);
-		sum += ((a >> i) & 1)*(1 << (31 - i));
-	}
-	return sum;
-}
-int main()
-{
-	int i = 0;
-	unsigned int a = 25;
-	//00000000000000000000000000011001
-	//00000000000000000000000000000001
-	//10011000000000000000000000000000
-	unsigned int ret = reverse_bit(a);
-	printf("%u\n",ret);
-	return 0;
-}
+//unsigned int reverse_bit(unsigned int a)
+//{
+//	int i = 0;
+//	unsigned int sum = 0;
+//	for (i = 0; i < 32; i++)
+//	{
+//		//sum += ((a >> i)&1)*pow(2, 31 - i);
+//		sum += ((a >> i) & 1)*(1 << (31 - i));
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	int i = 0;
+//	unsigned int a = 25;
+//	//00000000000000000000000000011001
+//	//00000000000000000000000000000001
+//	//10011000000000000000000000000000
+//	unsigned int ret = reverse_bit(a);
+//	printf("%u\n",ret);
+//	return 0;
+//}
 
 //unsigned reverse_bit(unsigned int num)
 //{
@@ -70,6 +70,10 @@ int main()
 //	return 0;
 //
 //}
+
+
+
+
 //指针访问二级数组的元素,形参是 指针数组
 //void Print(int(*parr)[5], int x, int y)
 //{
@@ -141,3 +145,31 @@ int main()
 	//}
 //	return 0;
 //}
+#include<assert.h>
+
+
+int MyStrlen(const char* ptr)
+{
+	int count = 0;
+	assert(ptr != NULL);
+	while (*ptr != '\0')
+	{
+		count++;
+		ptr++;
+	}
+	return count;
+
+}
+void ReverseString(char* str)
+{
+	int line = MyStrlen(str);
+}
+
+int main()
+{
+	char arr[] = "student a am i";
+	ReverseString(arr);
+	printf("%s\n",arr);
+	
+	return 0;
+}
