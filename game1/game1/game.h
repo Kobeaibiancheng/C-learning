@@ -1,6 +1,6 @@
 
-#define ROW 3
-#define COL 3
+#define ROW 10
+#define COL 10
 #include<string.h>
 #include<stdio.h>
 #include<time.h>

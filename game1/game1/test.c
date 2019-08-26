@@ -12,7 +12,7 @@ void menu()
 void game()
 {
 	char ret = 0;
-	char board[ROW][COL] = { 0 };
+	char board[ROW-3][COL-3] = { 0 };
 	InitBoard(board, ROW, COL);//≥ı ºªØ∆Â≈Ã
 	DisplayBoard(board, ROW, COL);//¥Ú”°∆Â≈Ã
 	while (1)

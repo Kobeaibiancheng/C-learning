@@ -98,66 +98,21 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 //≈–∂œ ‰”Æ
 char IsWiner(char board[ROW][COL], int row, int col)
 {
-	/*int i = 0;
+	int i = 0;
 	int j = 0;
-	int count = 0;
 	for (i = 0; i < row; i++)
 	{
-		count = 0;
 		for (j = 0; j < col; j++)
 		{
-			if (board[i][j] == '*')
-				count++;
+			if (board[i][j] == board[i + 1][j + 1] == board[i + 2][j + 2] == '*')
+				return '*';
+			else if (board[i][j] == board[i - 1][j - 1] == board[i - 2][j - 2] == '*')
+				return '*';
+			else if (board[i][j] == board[i][j + 1] == board[i][j + 2] == '*')
+				return '*';
+			else if (board[j][i] == board[j + 1][i] == board[j + 2][i] == '*')
+				return '*';
 		}
-		if (count == row)
-			return '*';
 	}
-	for (j = 0; j < row; j++)
-	{
-		count = 0;
-		for (i = 0; i < col; i++)
-		{
-			if (board[i][j] == '*')
-				count++;
-		}
-		if (count == row)
-			return '*';
-	}	*/
-	int i = 0;
-	for (i = 0; i < row; i++)
-	{
-		if (board[i][0] == '*' && board[i][1] == '*' && board[i][2] == '*')
-			return '*';
-	}
-	for (i = 0; i < col; i++)
-	{
-		if (board[0][i] == '*' && board[1][i] == '*' && board[2][i] == '*')
-			return '*';
-	}
-	if (board[0][0] == '*' && board[1][1] == '*' && board[2][2] == '*')
-		return '*';
-	if (board[0][2] == '*' && board[1][1] == '*' && board[2][0] == '*')
-		return '*';
-	for (i = 0; i < row; i++)
-	{
-		if (board[i][0] == '#' && board[i][1] == '#' && board[i][2] == '#')
-			return '#';
-	}
-	for (i = 0; i < col; i++)
-	{
-		if (board[0][i] == '#' && board[1][i] == '#' && board[2][i] == '#')
-			return '#';
-	}
-	if (board[0][0] == '#' && board[1][1] == '#' && board[2][2] == '#')
-		return '#';
-	if (board[0][2] == '#' && board[1][1] == '#' && board[2][0] == '#')
-		return '#';
-
-
-	if (IsFull(board, ROW, COL) == 1)
-		return 'p';
-
-	return 'c';
-
 }
 
