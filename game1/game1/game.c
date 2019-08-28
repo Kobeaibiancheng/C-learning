@@ -95,6 +95,7 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 
 
 
+
 //≈–∂œ ‰”Æ
 char IsWiner(char board[ROW][COL], int row, int col)
 {
