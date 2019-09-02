@@ -55,26 +55,45 @@
 //           int (__cdecl *compare )(const void *elem1, const void *elem2 ) );
 
 
-void Print(int arr[], int sz)
+//void Print(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//}
+//
+//int Com(const void* e1,const void* e2)
+//{
+//	return *(int*)e1 - *(int*)e2;
+//
+//}
+//int main()
+//{
+//	int arr[10] = { 2, 3, 1, 4, 6, 5, 9, 8, 7, 10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	qsort(arr, sz, sizeof(arr[0]), Com);
+//	Print(arr, sz);
+//	return 0;
+//
+//}
+int FindNumber(int* pa,int sz)
 {
+	int ret = *pa;
 	int i = 0;
-	for (i = 0; i < sz; i++)
+	for (i = 1; i < sz; i++)
 	{
-		printf("%d ", arr[i]);
+		ret ^= *(pa + i);
 	}
+	return ret;
 }
 
-int Com(const void* e1,const void* e2)
-{
-	return *(int*)e1 - *(int*)e2;
-
-}
 int main()
 {
-	int arr[10] = { 2, 3, 1, 4, 6, 5, 9, 8, 7, 10 };
+	int arr[] = { 1, 2, 6, 5, 1, 2, 6, 7, 5 };
 	int sz = sizeof(arr) / sizeof(arr[0]);
-	qsort(arr, sz, sizeof(arr[0]), Com);
-	Print(arr, sz);
+	int ret = FindNumber(arr, sz);
+	printf("%d\n", ret);
 	return 0;
-
 }
