@@ -108,3 +108,31 @@
 //	return 0;
 //}
 
+//    常见的动态内存错误
+
+//1.对NULL指针的解引用操作
+void test()
+{
+	int* p = (int*)malloc(INT_MAX / 4);
+	*p = 20;
+	free(p);
+	p = NULL;
+}
+
+//2.对动态开辟空间的越界访问
+void test()
+{
+	int i = 0;
+	char* p = (char*)malloc(10 * sizeof(char));
+	if (p == NULL)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	for (i = 0; i <= 10; i++)
+	{
+		*(p + i) = 'x'; //当i = 10时越界访问
+	}
+	free(p);
+	p = NULL;
+
+}
