@@ -78,22 +78,46 @@
 //	return 0;
 //
 //}
-int FindNumber(int* pa,int sz)
-{
-	int ret = *pa;
-	int i = 0;
-	for (i = 1; i < sz; i++)
-	{
-		ret ^= *(pa + i);
-	}
-	return ret;
-}
 
+
+
+//int FindNumber(int* pa,int sz)
+//{
+//	int ret = *pa;
+//	int i = 0;
+//	for (i = 1; i < sz; i++)
+//	{
+//		ret ^= *(pa + i);
+//	}
+//	return ret;
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1, 2, 6, 5, 1, 2, 6, 7, 5 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int ret = FindNumber(arr, sz);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+
+#include<assert.h>
+char* MyStrcpy(char* dest, const char* str)
+{
+	char* p = dest;
+	assert(dest != NULL);
+	assert(str != NULL);
+	while (*dest++ = *str++)
+	{
+		;
+	}
+	return p;
+}
 int main()
 {
-	int arr[] = { 1, 2, 6, 5, 1, 2, 6, 7, 5 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int ret = FindNumber(arr, sz);
-	printf("%d\n", ret);
+	char arr1[20] = { 0 };
+	char arr2[] = "hello world";
+	char* p = MyStrcpy(arr1, arr2);
+	printf("%s\n", p);
 	return 0;
 }
