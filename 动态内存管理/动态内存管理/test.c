@@ -110,29 +110,96 @@
 
 //    常见的动态内存错误
 
-//1.对NULL指针的解引用操作
-void test()
-{
-	int* p = (int*)malloc(INT_MAX / 4);
-	*p = 20;
-	free(p);
-	p = NULL;
-}
+////1.对NULL指针的解引用操作
+//void test()
+//{
+//	int* p = (int*)malloc(INT_MAX / 4);
+//	*p = 20;
+//	free(p);
+//	p = NULL;
+//}
+//
+////2.对动态开辟空间的越界访问
+//void test()
+//{
+//	int i = 0;
+//	char* p = (char*)malloc(10 * sizeof(char));
+//	if (p == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//	}
+//	for (i = 0; i <= 10; i++)
+//	{
+//		*(p + i) = 'x'; //当i = 10时越界访问
+//	}
+//	free(p);
+//	p = NULL;
+//
+//}
 
-//2.对动态开辟空间的越界访问
-void test()
-{
-	int i = 0;
-	char* p = (char*)malloc(10 * sizeof(char));
-	if (p == NULL)
-	{
-		printf("%s\n", strerror(errno));
-	}
-	for (i = 0; i <= 10; i++)
-	{
-		*(p + i) = 'x'; //当i = 10时越界访问
-	}
-	free(p);
-	p = NULL;
 
-}
+////3.对非动态开辟内存使用free释放
+//void Test()
+//{
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	free(p);
+//	p = NULL;
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+////4.使用free释放动态内存开辟的一部分
+//void Test()
+//{
+//	int i = 0;
+//	int* p = (int*)malloc(10 * sizeof(int));
+//	++p;
+//	free(p);            //p已经不是开辟的动态内存的起始地址了，free了一部分
+//	p = NULL;
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+////5.对开辟的动态内存进行多次释放free
+//void Test()
+//{
+//	char* p =(char*)malloc(100);
+//	free(p);
+//	free(p);
+//	p = NULL;
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
+
+
+////6.开辟的动态内存忘记释放（内存泄漏）
+//void Test()
+//{
+//	int* p = (int*)calloc(10, sizeof(int));
+//	if (p == NULL)
+//	{
+//		printf("%s\n", strerror(errno));
+//	}
+//	*p = 20;               //动态内存忘记释放
+//}
+//
+//int main()
+//{
+//	Test();
+//	return 0;
+//}
