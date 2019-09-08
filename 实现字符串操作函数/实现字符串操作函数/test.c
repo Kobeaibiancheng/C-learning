@@ -17,19 +17,19 @@
 //}
 //
 //
-//char* MyStrcat(char* dest, const char* src)
-//{
-//	char* str = dest;
-//	while (*dest)
-//	{
-//		dest++;
-//	}
-//	while (*dest++ = *src++)
-//	{
-//		;
-//	}
-//	return str;
-//}
+char* MyStrcat(char* dest, const char* src)
+{
+	char* str = dest;
+	while (*dest)
+	{
+		dest++;
+	}
+	while (*dest++ = *src++)
+	{
+		;
+	}
+	return str;
+}
 //
 //
 //int MyStrcmp(const char* str1, const char* str2)
@@ -53,7 +53,7 @@ int main()
 	char arr[20] = "hello ";
 	int ret = 0;
 	//MyStrcpy(arr, "hello world");
-	//MyStrcat(arr, "world");
+	MyStrcat(arr, "world");
 	//ret = MyStrcmp(arr, "hfllo ");
 	//printf("%d\n", ret);
 	printf("%s\n", arr);
