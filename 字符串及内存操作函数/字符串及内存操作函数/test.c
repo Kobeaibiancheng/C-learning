@@ -69,23 +69,43 @@
 //4.目标空间必须可变(不能用const修饰目标字符串)
 
 
-char* MyStrcpy(char* dest, const char* src)
-{
-	char* ret = dest;
-	assert(dest != NULL);
-	assert(src != NULL);
-	while (*dest++ = *src++)
-	{
-		;
-	}
-	return ret;
-}
+//char* MyStrcpy(char* dest, const char* src)
+//{
+//	char* ret = dest;
+//	assert(dest != NULL);
+//	assert(src != NULL);
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	char arr1[20] = "xxxxxxxxxxxxxx";
+//	char arr2[] = "hello world";
+//	//strcpy(arr1, arr2);
+//	MyStrcpy(arr1, arr2);
+//	printf("%s\n", arr1);
+//	return 0;
+//}
+
+
+
+//strcat函数(字符串追加函数)
+//char* strcat ( char* destination, const char* source )
+//                    目标字符串      追加(源)字符串
+//1.追加(源)字符串必须以'\0'结束
+//2.目标空间必须足够大，能够追加下源字符串
+//3.目标空间必须可修改
+//4.
+
+
 int main()
 {
-	char arr1[20] = "xxxxxxxxxxxxxx";
-	char arr2[] = "hello world";
-	//strcpy(arr1, arr2);
-	MyStrcpy(arr1, arr2);
-	printf("%s\n", arr1);
+	char arr1[20] = "hello ";
+	char arr2[] = "world";
+	strcat(arr1, arr2);
+	printf("%s", arr1);
 	return 0;
 }
