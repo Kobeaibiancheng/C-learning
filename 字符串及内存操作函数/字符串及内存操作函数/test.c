@@ -105,7 +105,9 @@ int main()
 {
 	char arr1[20] = "hello ";
 	char arr2[] = "world";
-	strcat(arr1, arr2);
+	//strcat(arr1, arr2);
+	//strcat(arr1, arr1);      strcat不能自己给自己追加
 	printf("%s", arr1);
+	//return 0;
 	return 0;
 }
