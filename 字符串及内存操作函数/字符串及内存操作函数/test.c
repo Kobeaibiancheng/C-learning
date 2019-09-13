@@ -98,16 +98,37 @@
 //1.追加(源)字符串必须以'\0'结束
 //2.目标空间必须足够大，能够追加下源字符串
 //3.目标空间必须可修改
-//4.
+//4.不能够自己给自己追加
 
 
-int main()
-{
-	char arr1[20] = "hello ";
-	char arr2[] = "world";
-	//strcat(arr1, arr2);
-	//strcat(arr1, arr1);      strcat不能自己给自己追加
-	printf("%s", arr1);
-	//return 0;
-	return 0;
-}
+
+//char* MyStrcat(char* dest, const char* src)
+//{
+//	char* start = dest;
+//	assert(dest != NULL);
+//	assert(src != NULL);
+//	while (*dest)
+//	{
+//		dest++;
+//	}
+//	while (*dest++ = *src++)
+//	{
+//		;
+//	}
+//	return start;
+//}
+//int main()
+//{
+//	char arr1[20] = "hello ";
+//	char arr2[] = "world";
+//	MyStrcat(arr1, arr2);
+//	//strcat(arr1, arr2);
+//	//strcat(arr1, arr1);      strcat不能自己给自己追加
+//	printf("%s", arr1);
+//	//return 0;
+//	return 0;
+//}
+
+
+
+
