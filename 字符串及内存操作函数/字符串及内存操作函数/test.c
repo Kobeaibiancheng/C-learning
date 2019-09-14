@@ -131,4 +131,56 @@
 
 
 
+//strcmp函数(字符串比较函数)
+//int strcmp ( const char * str1, const char * str2 )
+//                 字符串一            字符串二
+//标准规定：
+//第一个字符串大于第二个字符串，则返回大于0的数
+//第一个字符串等于第二个字符串，则返回0
+//第一个字符串小于第二个字符串，则返回小于0的数
+
+
+//int MyStrcmp(const char* str1, const char* str2)
+//{
+//	assert(str1 != NULL);
+//	assert(str2 != NULL);
+//	while (1)
+//	{
+//		if (*str1 != *str2)
+//			return *str1 - *str2;
+//		if (*str1 || *str2 == '\0')
+//			return 0;
+//		str1++;
+//		str2++;
+//	}
+//}
+//int main()
+//{
+//	char arr[] = "hello world";
+//	//int ret = strcmp(arr, "hello");
+//	int ret = MyStrcmp(arr, "hello world");
+//	if (ret > 0)
+//	{
+//		printf("第一个字符串大\n");
+//	}
+//	else if (ret < 0)
+//	{
+//		printf("第二个字符串大\n");
+//	}
+//	else
+//		printf("一样大\n");
+//	//if (strcmp(arr, "hello world") == 0)
+//	//{
+//	//	printf("一样大\n");
+//	//}
+//	return 0;
+//}
+
+
+
+//strncpy函数
+//char * strncat ( char* destination, const char* source, size_t num )
+//                     目标字符串          源字符串        拷贝的数目
+//1.拷贝num个字符从源字符串到目标字符串
+//2.如果源字符串的数目小于num，则拷贝完源字符串后，在目标字符串后追加0，直到拷贝num个
 
