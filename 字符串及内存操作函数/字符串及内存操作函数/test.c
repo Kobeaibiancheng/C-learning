@@ -184,3 +184,40 @@
 //1.拷贝num个字符从源字符串到目标字符串
 //2.如果源字符串的数目小于num，则拷贝完源字符串后，在目标字符串后追加0，直到拷贝num个
 
+
+
+//char* MyStrncpy(char* str1, const char* str2, size_t num)
+//{
+//	char* start = str1;
+//	assert(str1 != NULL);
+//	assert(str2 != NULL);
+//	while (num)
+//	{
+//		if (*str2 != '\0')
+//		{
+//			*str1 = *str2;
+//			num--;
+//			str1++;
+//			str2++;
+//		}
+//		else
+//		{
+//			*str1 = '\0';
+//			num--;
+//			str1++;
+//		}
+//	}
+//	return start;
+//}
+//int main()
+//{
+//	char arr1[20] = "xxxxxxxxxxxxxxxxxx";
+//	char arr2[] = "hello world";
+//	//strncpy(arr1, arr2, 14);
+//	MyStrncpy(arr1, arr2, 14);
+//	printf("%s\n", arr1);
+//	return 0;
+//}
+
+
+
