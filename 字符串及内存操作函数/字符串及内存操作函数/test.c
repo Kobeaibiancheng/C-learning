@@ -221,3 +221,25 @@
 
 
 
+
+//strstrº¯Êı(ÔÚ×Ö·û´®ÖĞÕÒ×Ö·û´®)
+//char* strstr ( const char* str1, const char* str2)
+//                   ×Ö·û´®Ò»          ×Ö·û´®¶ş
+
+// /81class/test8_26/
+char* MyStrstr(const char* str1, const char* str2)
+{
+
+}
+int main()
+{
+	char arr1[] = "abcdef";
+	char arr2[] = "bcd";
+	//char* ret = strstr(arr1, arr2);
+	char* ret = MyStrstr(arr1, arr2);
+	if (ret != NULL)
+		printf("%s\n", ret);
+	else
+		printf("ÕÒ²»µ½\n");
+	return 0;
+}
