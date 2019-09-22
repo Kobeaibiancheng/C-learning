@@ -226,39 +226,60 @@
 //char* strstr ( const char* str1, const char* str2)
 //                   字符串一          字符串二
 
-// /81class/test8_26/
-char* MyStrstr(const char* str1, const char* str2)
-{
-	assert(str1); 
-	assert(str2);  
-	char *cp = (char*)str1; 
-	char *substr = (char *)str2; 
-	char *s1 = NULL;   
-	if (*str2 == '\0')   
-		return NULL;     
-	while (*cp)  
-	{
-		s1 = cp;  
-		substr = str2;   
-		while (*s1 && *substr && (*s1 == *substr)) 
-		{
-			s1++;  
-			substr++;
-		}   
-		if (*substr == '\0')  
-			return cp;  
-		cp++;
-	}
-}
+
+//char* MyStrstr(const char* str1, const char* str2)
+//{
+//	assert(str1); 
+//	assert(str2);  
+//	char *cp = (char*)str1; 
+//	char *substr = (char *)str2; 
+//	char *s1 = NULL;   
+//	if (*str2 == '\0')   
+//		return NULL;     
+//	while (*cp)  
+//	{
+//		s1 = cp;  
+//		substr = str2;   
+//		while (*s1 && *substr && (*s1 == *substr)) 
+//		{
+//			s1++;  
+//			substr++;
+//		}   
+//		if (*substr == '\0')  
+//			return cp;  
+//		cp++;
+//	}
+//}
+//int main()
+//{
+//	char arr1[] = "abcdef";
+//	char arr2[] = "bcd";
+//	//char* ret = strstr(arr1, arr2);
+//	char* ret = MyStrstr(arr1, arr2);
+//	if (ret != NULL)
+//		printf("%s\n", ret);
+//	else
+//		printf("找不到\n");
+//	return 0;
+//}
+
+
+
+//strtok函数
+//char* strtok ( char* str, const char* sep )
+//1.sep参数是个字符串，定义了用作分隔符的字符集合
+//2.第一个参数指向一个字符串，它包含了0个或者多个由sep字符串中一个或者多个分隔符分割的标记
+//3.strtok函数找到str中的下一个标记，并将其用\0结尾，返回一个指向这个标记的指针(注:strtok函数
+//  会改变被操作的字符串，所以在使用strtok函数切分字符串一般都是切分临时拷贝的一份)
+//4.strtok函数的第一个参数不为 NULL ，函数将找到str中第一个标记，strtok函数将保存它在字符串中的位置
+//5.strtok函数的第一个参数为 NULL ，函数将在同一个字符串中被保存的位置开始，查找下一个标记
+//6.如果字符串中不存在更多的标记，则返回 NULL 指针
 int main()
 {
-	char arr1[] = "abcdef";
-	char arr2[] = "bcd";
-	//char* ret = strstr(arr1, arr2);
-	char* ret = MyStrstr(arr1, arr2);
-	if (ret != NULL)
-		printf("%s\n", ret);
-	else
-		printf("找不到\n");
+	char arr[] = "he,h.e!";
+	char* str = strtok(arr, "!,");
+	printf("%s\n", str);
 	return 0;
+
+	// /81class/test8_26/
 }
