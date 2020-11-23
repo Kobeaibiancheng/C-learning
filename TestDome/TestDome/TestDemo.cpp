@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-
+#include<iostream>
+using namespace std;
 
 #define MaxSize 50
 
@@ -54,7 +54,7 @@ int main() {
 
 
 	ListDelete(L, 1, e);
-	printf("%d\n", e);
-	system("pause");
+	cout << "" << endl;
+	//system("pause");
 	return 0;
 }
