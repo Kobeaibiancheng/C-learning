@@ -64,7 +64,7 @@ int LocateElem(SeqList &L, int e) {
 	}
 	return -1;
 }
-int main(){
+/*int main(){
 	SeqList L;
 	//c++动态分配方式
 	L.data = new int[InitSize];
@@ -94,4 +94,4 @@ int main(){
 	//L.data = (int*)malloc(sizeof(int)*InitSize);
 
 
-}
+}*/
