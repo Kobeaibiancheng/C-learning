@@ -20,7 +20,7 @@ void InitStack(LinkStack &S) {
 //}
 
 //不带头结点push
-bool Push(LiStack &S, int x){
+bool Push(LinkStack &S, int x){
 	Linknode *node = (Linknode*)malloc(sizeof(Linknode));
 	S ->next = node;
 	S = node;
@@ -64,5 +64,7 @@ void main(){
 	LinkStack S = (LinkStack)malloc(sizeof(LinkStack));
 	S->data = -1;
 	Push(S, 0);
+	Push(S, 1);
+	return;
 }
 
