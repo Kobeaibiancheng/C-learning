@@ -41,23 +41,23 @@ LinkList List_HeadInsert(LinkList &L) {
 	}
 	return L;
 }
-int main() {
-	/*int e = 0;
-	scanf("%d", &e);
-	LNode *first = (LNode *)malloc(sizeof(LNode));
-	first->data = 1;
-	LinkList L = (LinkList)malloc(sizeof(LinkList));
-	ListInsert(L, 1, 10);
-	ListInsert(L, 2, 20);
-	ListInsert(L, 3, 30);
-	ListInsert(L, 4, 40);*/
-
-	LinkList L;
-	L = List_HeadInsert(L);
-	LNode *cur = L->next;
-	while (cur->next != NULL) {
-		printf("%d ", cur->data);
-		cur = cur->next;
-	}
-	
-}
+//int main() {
+//	/*int e = 0;
+//	scanf("%d", &e);
+//	LNode *first = (LNode *)malloc(sizeof(LNode));
+//	first->data = 1;
+//	LinkList L = (LinkList)malloc(sizeof(LinkList));
+//	ListInsert(L, 1, 10);
+//	ListInsert(L, 2, 20);
+//	ListInsert(L, 3, 30);
+//	ListInsert(L, 4, 40);*/
+//
+//	LinkList L;
+//	L = List_HeadInsert(L);
+//	LNode *cur = L->next;
+//	while (cur->next != NULL) {
+//		printf("%d ", cur->data);
+//		cur = cur->next;
+//	}
+//	
+//}

@@ -22,7 +22,8 @@ void InitStack(LinkStack &S) {
 //不带头结点push
 bool Push(LinkStack &S, int x){
 	Linknode *node = (Linknode*)malloc(sizeof(Linknode));
-	S ->next = node;
+	node->data = x;
+	node->next = S;
 	S = node;
 	return true;
 }
