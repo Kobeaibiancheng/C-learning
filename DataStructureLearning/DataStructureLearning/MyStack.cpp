@@ -37,6 +37,15 @@ bool Empty(LinkStack &S) {//带头结点判空
 		return false;
 	}
 }
+//不带头结点判空
+//bool Empty(LinkStack &S) {
+//	if (S == NULL) {
+//		return true;
+//	}
+//	else{
+//		return false;
+//	}
+//}
 
 //bool Pop(LinkStack &S, int &x) {//带头结点pop
 //	if (Empty(S)) {
