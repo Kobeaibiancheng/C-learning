@@ -70,12 +70,12 @@ bool Pop(LinkStack &S, int x) {
 	return true;
 }
 
-void main(){
-	LinkStack S = (LinkStack)malloc(sizeof(LinkStack));
-	S->data = -1;
-	S->next = NULL;
-	Push(S, 0);
-	Push(S, 1);
-	return;
-}
+//void main(){
+//	LinkStack S = (LinkStack)malloc(sizeof(LinkStack));
+//	S->data = -1;
+//	S->next = NULL;
+//	Push(S, 0);
+//	Push(S, 1);
+//	return;
+//}
 
